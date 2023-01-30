@@ -23,7 +23,7 @@ internal class Program
         var streamQuery = resObject.SelectTokens("model.salahTimings["+(DateTime.Now.DayOfYear - 1)+"]").FirstOrDefault();
         salahTimings = streamQuery.ToObject<salahTimings>();
 
-        strDate = DateTime.Now.ToString("dd/MM/yyyy")+" "+salahTimings.asr+":00";
+         strDate = DateTime.Now.ToString("dd/MM/yyyy")+" "+salahTimings.asr+":00";
         date = DateTime.ParseExact(strDate, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
         ExecuteAsr(date.AddMinutes(-10)).Wait();
         strDate = DateTime.Now.ToString("dd/MM/yyyy") + " " + salahTimings.fajr+ ":00";
@@ -42,7 +42,7 @@ internal class Program
 
     static async Task ExecuteAsr(DateTime sendTime)
     {
-        string APIKey = "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";
+        string APIKey = "YourAPIKEY";
         Environment.SetEnvironmentVariable("SENDGRID_API_KEY", APIKey);
         var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
         var client = new SendGridClient(apiKey);
@@ -59,7 +59,7 @@ internal class Program
 
     static async Task ExecuteFajr(DateTime sendTime)
     {
-        string APIKey = "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";
+        string APIKey = "YourAPIKEY";
         Environment.SetEnvironmentVariable("SENDGRID_API_KEY", APIKey);
         var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
         var client = new SendGridClient(apiKey);
@@ -76,7 +76,7 @@ internal class Program
 
     static async Task ExecuteIsha(DateTime sendTime)
     {
-        string APIKey = "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";
+        string APIKey = "YourAPIKEY";
         Environment.SetEnvironmentVariable("SENDGRID_API_KEY", APIKey);
         var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
         var client = new SendGridClient(apiKey);
@@ -93,7 +93,7 @@ internal class Program
 
     static async Task ExecuteMaghrib(DateTime sendTime)
     {
-        string APIKey = "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";
+        string APIKey = "YourAPIKEY";
         Environment.SetEnvironmentVariable("SENDGRID_API_KEY", APIKey);
         var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
         var client = new SendGridClient(apiKey);
@@ -110,7 +110,7 @@ internal class Program
 
     static async Task ExecuteZuhr(DateTime sendTime)
     {
-        string APIKey = "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";
+        string APIKey = "YourAPIKEY";
         Environment.SetEnvironmentVariable("SENDGRID_API_KEY", APIKey);
         var apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
         var client = new SendGridClient(apiKey);
